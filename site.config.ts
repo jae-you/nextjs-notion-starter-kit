@@ -14,7 +14,7 @@ export default siteConfig({
   // 3. 소셜 링크 (필요 없으면 null 혹은 주석 처리)
   twitter: null,
   github: null,
-  linkedin: 'jaeyoun-you', // 본인 링크가 있다면 활성화
+  linkedin: 'null', // 본인 링크가 있다면 활성화
 
   // 4. 미리보기 이미지 지원 (성능을 위해 유지)
   isPreviewImageSupportEnabled: true,
