@@ -1,65 +1,27 @@
 import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
-  // the site's root Notion page (required)
-  rootNotionPageId: 'e20e2285ad1883f5b7c801cba35de1dc?v=61ce2285ad1882ce893d08be5ac2283e',
+  // 1. Root Page ID 수정 (v= 이후의 파라미터는 삭제하고 깔끔한 ID만 남기는 게 안전합니다)
+  rootNotionPageId: 'e20e2285ad1883f5b7c801cba35de1dc',
 
-  // if you want to restrict pages to a single notion workspace (optional)
-  // (this should be a Notion ID; see the docs for how to extract this)
-  rootNotionSpaceId: null,
-
-  // basic site info (required)
   name: 'Brew AI Lab',
-  domain: 'www.brew.ai.kr',
+  domain: 'brew.ai.kr', // www는 빼고 메인 도메인만 적는 것이 일반적입니다.
   author: 'Jae You',
 
-  // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  // 2. 검색 엔진 및 공유 시 나타날 설명 (아까 정한 슬로건 반영!)
+  description: 'Under Pressure, AI Performs Better. 비즈니스 가치를 짜내는 AI 컨설팅 by Brew AI Lab',
 
-  // social usernames (optional)
-  // twitter: 'transitive_bs',
-  // github: 'transitive-bullshit',
-  // linkedin: 'fisch2',
-  // mastodon: '#', // optional mastodon profile URL, provides link verification
-  // newsletter: '#', // optional newsletter URL
-  // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
+  // 3. 소셜 링크 (필요 없으면 null 혹은 주석 처리)
+  twitter: null,
+  github: null,
+  linkedin: 'jaeyoun-you', // 본인 링크가 있다면 활성화
 
-  // default notion icon and cover images for site-wide consistency (optional)
-  // page-specific values will override these site-wide defaults
-  defaultPageIcon: null,
-  defaultPageCover: null,
-  defaultPageCoverPosition: 0.5,
-
-  // whether or not to enable support for LQIP preview images (optional)
+  // 4. 미리보기 이미지 지원 (성능을 위해 유지)
   isPreviewImageSupportEnabled: true,
-
-  // whether or not redis is enabled for caching generated preview images (optional)
-  // NOTE: if you enable redis, you need to set the `REDIS_HOST` and `REDIS_PASSWORD`
-  // environment variables. see the readme for more info
   isRedisEnabled: false,
 
-  // map of notion page IDs to URL paths (optional)
-  // any pages defined here will override their default URL paths
-  // example:
-  //
-  // pageUrlOverrides: {
-  //   '/foo': '067dd719a912471ea9a3ac10710e7fdf',
-  //   '/bar': '0be6efce9daf42688f65c76b89f8eb27'
-  // }
-  pageUrlOverrides: null,
-
-  // whether to use the default notion navigation style or a custom one with links to
-  // important pages. To use `navigationLinks`, set `navigationStyle` to `custom`.
-  navigationStyle: 'default'
-  // navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'About',
-  //     pageId: 'f1199d37579b41cbabfc0b5174f4256a'
-  //   },
-  //   {
-  //     title: 'Contact',
-  //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
-  //   }
-  // ]
+  // 5. 네비게이션 스타일
+  // 만약 노션 상단의 '표(Database)' 느낌을 없애고 싶다면 
+  // 노션 원본 페이지에서 '데이터베이스' 대신 '텍스트'와 '페이지' 위주로 구성하는 것이 가장 빠릅니다.
+  navigationStyle: 'default' 
 })
